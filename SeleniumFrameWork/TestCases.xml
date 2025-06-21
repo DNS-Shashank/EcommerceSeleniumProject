@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+<!-- suite parallel="tests" name="Suite -> This is used when we want to run tests parallely -->
+  <listeners>
+    <listener class-name="DnssSelenium.TestComponents.Listeners"/>
+  </listeners>
+  
+  <!-- First test: ErrorValidation -->
+  <test thread-count="5" name="ErrorValidation">
+    <!-- Thread count means the maximum number of methods in that class you want to execute in parallel -->
+    <classes>
+      <class name="DnssSelenium.tests.ErrorValidationsTest"/>
+    </classes>
+  </test>
+  
+  <!-- Second test: StandAloneTest -->
+  <test thread-count="5" name="StandAloneTest">
+    <classes>
+      <class name="DnssSelenium.tests.standAloneTest"/>
+    </classes>
+  </test>
+</suite>
